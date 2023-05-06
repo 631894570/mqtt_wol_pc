@@ -1,0 +1,16 @@
+[Unit]
+Description=MQTT Client Contral PC Daemon 
+After=network.target 
+Wants=network.target
+
+[Service]
+Type=simple 
+WorkingDirectory=/mnt/wol
+ExecStart=/usr/bin/python3 wol_pc.py 
+Restart=always
+RestartSec=20s
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
